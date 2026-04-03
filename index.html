@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repair Bear — Get Your Device Fixed Fast</title>
+    <meta name="description" content="Stop calling repair shops. Tell Repair Bear what's broken, get an instant price range, and connect with a trusted local repair shop." />
+    <meta name="author" content="Repair Bear" />
+
+    <meta property="og:title" content="Repair Bear — Get Your Device Fixed Fast" />
+    <meta property="og:description" content="Stop calling repair shops. Tell Repair Bear what's broken, get an instant price range, and connect with a trusted local repair shop." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@RepairBear" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <script>
+      // Prevent FOUC: apply saved theme immediately
+      (function() {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
