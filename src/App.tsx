@@ -8,6 +8,7 @@ import CustomerPortal from "./pages/CustomerPortal.tsx";
 import ShopPortal from "./pages/ShopPortal.tsx";
 import Corporate from "./pages/Corporate.tsx";
 import Login from "./pages/Login.tsx";
+import ShopLogin from "./pages/ShopLogin.tsx";
 import ForgotPassword from "./pages/ForgotPassword.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import ProfileSettings from "./pages/ProfileSettings.tsx";
@@ -28,6 +29,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/shop-login" element={<ShopLogin />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/create-account" element={<CreateAccount />} />
