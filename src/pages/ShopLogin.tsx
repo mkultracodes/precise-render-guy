@@ -37,7 +37,7 @@ const ShopLogin = () => {
             <img src={bearMascot} alt="Repair Bear" className="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20" />
             <span className="font-display font-bold text-xl text-foreground flex items-center gap-1.5">
               Repair <span className="text-gradient">Bear</span>
-              <span className="text-xs px-2 py-0.5 rounded-full bg-accent/10 text-accent font-semibold">Shop</span>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-accent/10 text-accent font-semibold">Provider</span>
             </span>
           </Link>
         </div>
@@ -51,8 +51,8 @@ const ShopLogin = () => {
               Repair <span className="text-gradient">Bear</span>
             </h1>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-xs px-2.5 py-0.5 rounded-full bg-accent/10 text-accent font-semibold">Shop</span>
-              <p className="text-sm text-muted-foreground">Sign in to your shop account</p>
+              <span className="text-xs px-2.5 py-0.5 rounded-full bg-accent/10 text-accent font-semibold">Provider</span>
+              <p className="text-sm text-muted-foreground">Sign in to your provider account</p>
             </div>
           </div>
 

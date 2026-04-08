@@ -35,7 +35,7 @@ export default function ShopPortalLayout({ children }: ShopPortalLayoutProps) {
                 <img src={bearMascot} alt="Repair Bear" className="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" />
                 <span className="font-display font-bold text-lg text-foreground">
                   Repair <span className="text-gradient">Bear</span>
-                  <span className="text-xs ml-1 px-2 py-0.5 rounded-full bg-accent/10 text-accent font-semibold">Shop</span>
+                  <span className="text-xs ml-1 px-2 py-0.5 rounded-full bg-accent/10 text-accent font-semibold">Provider</span>
                 </span>
               </a>
             </div>
