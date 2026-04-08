@@ -123,6 +123,22 @@ const CustomerPortal = () => {
               </Button>
             </div>
           </section>
+
+          {/* Quick Actions */}
+          <div className="grid grid-cols-3 gap-4 mt-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            {[
+              { icon: Plus, label: "New Repair", color: "text-primary" },
+              { icon: History, label: "History", color: "text-accent" },
+              { icon: MessageCircle, label: "Contact Support", color: "text-success" },
+            ].map((a) => (
+              <button key={a.label} className="glass-card rounded-2xl p-4 flex flex-col items-center gap-2 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group">
+                <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <a.icon className={`w-5 h-5 ${a.color}`} />
+                </div>
+                <span className="text-sm font-medium text-foreground">{a.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </main>
     </div>
