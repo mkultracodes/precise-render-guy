@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import bearMascot from "@/assets/repair-bear-mascot.jpg";
-import { ChevronRight, Plus, LogOut, Settings } from "lucide-react";
+import { ChevronRight, Plus, LogOut, Settings, MessageCircle, History } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const statusSteps = [
