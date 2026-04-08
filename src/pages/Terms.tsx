@@ -21,13 +21,13 @@ const Terms = () => (
           <p><strong className="text-foreground">Effective Date:</strong> January 1, 2025</p>
           <p>Welcome to Repair Bear. By creating an account and using our services, you agree to the following Terms & Conditions.</p>
           <h3 className="font-semibold text-foreground text-base">1. Services</h3>
-          <p>Repair Bear is a device repair coordination platform that connects customers with local repair shops. We facilitate communication, estimates, and tracking but do not perform repairs directly.</p>
+          <p>Repair Bear is a device repair coordination platform that connects customers with local repair providers. We facilitate communication, estimates, and tracking but do not perform repairs directly.</p>
           <h3 className="font-semibold text-foreground text-base">2. User Accounts</h3>
           <p>You are responsible for maintaining the confidentiality of your account credentials. You agree to provide accurate and complete information when creating your account.</p>
           <h3 className="font-semibold text-foreground text-base">3. Fees</h3>
-          <p>Repair Bear charges a coordination fee per repair submission. Repair costs are determined by and paid directly to the repair shop. All Repair Bear fees are non-refundable once a repair has been matched with a shop.</p>
+          <p>Repair Bear charges a coordination fee per repair submission. Repair costs are determined by and paid directly to the repair provider. All Repair Bear fees are non-refundable once a repair has been matched with a provider.</p>
           <h3 className="font-semibold text-foreground text-base">4. Limitation of Liability</h3>
-          <p>Repair Bear is not responsible for the quality, timeliness, or outcome of repairs performed by third-party repair shops. We act solely as a coordination platform.</p>
+          <p>Repair Bear is not responsible for the quality, timeliness, or outcome of repairs performed by third-party repair providers. We act solely as a coordination platform.</p>
           <h3 className="font-semibold text-foreground text-base">5. Intellectual Property</h3>
           <p>All content, trademarks, and materials on the Repair Bear platform are owned by Repair Bear and may not be reproduced without written permission.</p>
           <h3 className="font-semibold text-foreground text-base">6. Termination</h3>
