@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
 import PortalLayout from "@/components/PortalLayout";
+import { CheckCircle, Mail } from "lucide-react";
 
 const ContactSupport = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("repairbear_user");
@@ -21,9 +22,42 @@ const ContactSupport = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Your message has been sent. We'll get back to you soon!");
-    setMessage("");
+    setSubmitted(true);
   };
+
+  if (submitted) {
+    return (
+      <PortalLayout>
+        <div className="max-w-lg">
+          <div className="glass-card rounded-2xl p-10 text-center space-y-5">
+            <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mx-auto">
+              <CheckCircle className="w-9 h-9 text-green-600 dark:text-green-400" />
+            </div>
+            <h1 className="font-display font-bold text-2xl text-foreground">Message Sent!</h1>
+            <p className="text-muted-foreground">
+              Thank you for reaching out. A follow-up email will be sent to{" "}
+              <span className="font-medium text-foreground">{email}</span> shortly.
+            </p>
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground pt-2">
+              <Mail className="w-4 h-4" />
+              <span>Check your inbox for a confirmation</span>
+            </div>
+            <Button
+              variant="hero"
+              size="lg"
+              className="w-full mt-4"
+              onClick={() => {
+                setSubmitted(false);
+                setMessage("");
+              }}
+            >
+              Send Another Message
+            </Button>
+          </div>
+        </div>
+      </PortalLayout>
+    );
+  }
 
   return (
     <PortalLayout>
