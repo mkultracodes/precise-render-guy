@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import bearMascot from "@/assets/repair-bear-mascot.jpg";
 import { useState, useEffect } from "react";
-import ThemeToggle from "@/components/ThemeToggle";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -51,11 +51,16 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <Button variant="hero" size="lg" className="group/btn">
-            Get My Quote
-            <span className="inline-block transition-transform duration-300 group-hover/btn:translate-x-0.5">→</span>
-          </Button>
+          <Link to="/login">
+            <Button variant="outline" size="sm">
+              Customer Login
+            </Button>
+          </Link>
+          <Link to="/shop">
+            <Button variant="hero" size="sm">
+              Shop Login
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
