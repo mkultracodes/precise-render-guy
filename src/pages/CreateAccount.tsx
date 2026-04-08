@@ -193,7 +193,7 @@ const CreateAccount = () => {
               </label>
             </div>
 
-            <Button variant="hero" size="lg" className="w-full" type="submit" disabled={!agreed}>
+            <Button variant="hero" size="lg" className="w-full" type="submit" disabled={!agreed || !form.name || !form.email || !form.phone || !form.password || !form.confirmPassword}>
               Create Account
             </Button>
 
