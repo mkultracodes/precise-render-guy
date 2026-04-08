@@ -51,7 +51,7 @@ export function PortalSidebar() {
                         activeClassName="bg-muted text-primary font-medium"
                       >
                         <item.icon className="mr-2 h-4 w-4 shrink-0" />
-                        {!collapsed && <span>{item.title}</span>}
+                        <span>{item.title}</span>
                       </NavLink>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
