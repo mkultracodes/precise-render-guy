@@ -6,7 +6,7 @@ const FinalCTA = () => {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="py-12 md:py-28 relative overflow-hidden">
+    <section className="py-8 md:py-16 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-primary/8 to-transparent" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-primary/5 blur-3xl animate-glow-pulse" />

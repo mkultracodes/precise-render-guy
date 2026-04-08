@@ -58,13 +58,10 @@ const TrustSection = () => {
   const visibleTestimonials = testimonials.slice(activeIndex, activeIndex + 3);
 
   return (
-    <section id="trust" className="py-12 md:py-28 relative">
+    <section id="trust" className="py-8 md:py-16 relative">
       <div className="absolute inset-0 tech-grid opacity-20" />
       <div className="container mx-auto px-4 relative">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-success/10 text-success text-sm font-medium mb-4">
-            ⭐ Social proof
-          </span>
+        <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Trusted by Thousands
           </h2>
