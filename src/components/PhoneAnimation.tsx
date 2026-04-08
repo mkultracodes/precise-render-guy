@@ -112,7 +112,7 @@ const PhoneAnimation = () => {
   const [typedText, setTypedText] = useState("");
 
   const msg1 = "My iPhone screen is cracked";
-  const msg2 = "How soon can it be fixed?";
+  const msg2 = "Find a repair provider near me asap";
 
   // Preload bear image to prevent glitching
   useEffect(() => {
@@ -297,12 +297,25 @@ const PhoneAnimation = () => {
                            <p className="text-sm" style={{ color: 'hsl(35 20% 90%)' }}>{msg2}</p>
                          </div>
                        </div>
-                       <div className="flex items-start gap-2 animate-fade-in">
-                         <img src={bearMascot} alt="" className="w-7 h-7 rounded-full object-cover shrink-0" />
-                         <div className="rounded-2xl rounded-bl-md px-3 py-2.5" style={{ background: 'hsl(20 16% 14%)' }}>
-                           <p className="text-sm" style={{ color: 'hsl(35 20% 75%)' }}>We'll connect you with a shop as soon as possible! 🐻</p>
-                         </div>
-                       </div>
+                        <div className="flex items-start gap-2 animate-fade-in">
+                          <img src={bearMascot} alt="" className="w-7 h-7 rounded-full object-cover shrink-0" />
+                          <div className="rounded-2xl rounded-bl-md px-3 py-2.5 space-y-1.5" style={{ background: 'hsl(20 16% 14%)' }}>
+                            <p className="text-xs" style={{ color: 'hsl(35 20% 75%)' }}>3 providers near you:</p>
+                            {[
+                              { name: "FixIt Pro", dist: "0.3 mi", rating: "4.9" },
+                              { name: "PhoneMedic", dist: "1.1 mi", rating: "4.8" },
+                              { name: "iRepair Hub", dist: "2.4 mi", rating: "4.7" },
+                            ].map((s, i) => (
+                              <div key={i} className="rounded-lg px-2 py-1.5 flex items-center justify-between" style={{ background: 'hsl(20 16% 18%)' }}>
+                                <div>
+                                  <p className="text-xs font-semibold" style={{ color: 'hsl(35 20% 90%)' }}>{s.name}</p>
+                                  <p className="text-[10px]" style={{ color: 'hsl(30 10% 45%)' }}>{s.dist} away</p>
+                                </div>
+                                <span className="text-[10px] font-medium text-primary">★ {s.rating}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                      </>
                    )}
                 </>
