@@ -22,8 +22,6 @@ const navItems = [
 ];
 
 export function PortalSidebar() {
-  const { state } = useSidebar();
-  const collapsed = state === "collapsed";
   const location = useLocation();
 
   return (
