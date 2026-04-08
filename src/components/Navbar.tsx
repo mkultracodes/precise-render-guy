@@ -31,7 +31,7 @@ const Navbar = () => {
             <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-success border-2 border-card animate-pulse" />
           </div>
           <span className="font-display font-bold text-xl text-foreground">
-            Repair<span className="text-gradient">Bear</span>
+            Repair <span className="text-gradient">Bear</span>
           </span>
         </div>
         <div className="hidden md:flex items-center gap-8">

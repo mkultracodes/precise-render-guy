@@ -44,7 +44,7 @@ const Corporate = () => {
           <Link to="/" className="flex items-center gap-2.5">
             <img src={bearMascot} alt="Repair Bear" className="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20" />
             <span className="font-display font-bold text-xl text-foreground">
-              Repair<span className="text-gradient">Bear</span>
+              Repair <span className="text-gradient">Bear</span>
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-6">

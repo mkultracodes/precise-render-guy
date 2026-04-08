@@ -20,7 +20,7 @@ const ForgotPassword = () => {
         <div className="flex flex-col items-center mb-8">
           <img src={bearMascot} alt="Repair Bear" className="w-16 h-16 rounded-full object-cover ring-2 ring-primary/20 mb-4" />
           <h1 className="font-display font-bold text-2xl text-foreground">
-            Repair<span className="text-gradient">Bear</span>
+            Repair <span className="text-gradient">Bear</span>
           </h1>
         </div>
 
