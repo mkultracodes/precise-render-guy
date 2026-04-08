@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { PortalSidebar } from "@/components/PortalSidebar";
 import { LogOut, Menu } from "lucide-react";
-import ThemeToggle from "@/components/ThemeToggle";
+
 import bearMascot from "@/assets/repair-bear-mascot.jpg";
 
 interface PortalLayoutProps {
@@ -43,7 +43,6 @@ export default function PortalLayout({ children }: PortalLayoutProps) {
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <ThemeToggle />
               <button
                 onClick={handleLogout}
                 className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center hover:bg-destructive/20 transition-colors"

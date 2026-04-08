@@ -7,7 +7,7 @@ import {
   Smartphone, Wrench, Truck, ChevronRight, Sparkles,
   BarChart3, Target, Layers, Building2, Zap
 } from "lucide-react";
-import ThemeToggle from "@/components/ThemeToggle";
+
 
 const metrics = [
   { label: "Repairs Completed", value: "10,000+", icon: Wrench },
@@ -53,7 +53,6 @@ const Corporate = () => {
             <a href="#market" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Market</a>
           </div>
           <div className="flex items-center gap-3">
-            <ThemeToggle />
             <Button variant="hero" className="group/btn">
               Contact Us
               <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5" />
