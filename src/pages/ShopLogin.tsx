@@ -61,7 +61,7 @@ const ShopLogin = () => {
               <label className="text-sm font-medium text-foreground">Email</label>
               <Input
                 type="email"
-                placeholder="shop@example.com"
+                placeholder="provider@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -88,8 +88,8 @@ const ShopLogin = () => {
             </div>
 
             <div className="text-center text-sm pt-2 border-t border-border/50">
-              <span className="text-muted-foreground">Don't have a shop account? </span>
-              <Link to="/create-shop-account" className="text-primary font-medium hover:underline">Register your shop</Link>
+              <span className="text-muted-foreground">Don't have a provider account? </span>
+              <Link to="/create-shop-account" className="text-primary font-medium hover:underline">Register as a provider</Link>
             </div>
           </form>
         </div>

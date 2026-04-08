@@ -44,7 +44,7 @@ const PricingSection = () => {
               Comes back as repair credit
             </p>
             <ul className="space-y-3 mb-8 flex-1">
-              {["Instant price range", "Up to 5 shop quotes", "Full repair tracking", "Receipt & history"].map((f) => (
+              {["Instant price range", "Up to 5 provider quotes", "Full repair tracking", "Receipt & history"].map((f) => (
                 <li key={f} className="flex items-center gap-2.5 text-sm text-foreground">
                   <div className="w-5 h-5 rounded-full bg-success/10 flex items-center justify-center shrink-0">
                     <Check className="w-3 h-3 text-success" />
@@ -81,7 +81,7 @@ const PricingSection = () => {
               Only $20 concierge (also comes back as credit)
             </p>
             <ul className="space-y-3 mb-8 flex-1">
-              {["Everything in Free", "Lower concierge fee", "Priority repair matching", "Faster shop confirmations", "Device health alerts", "Warranty assistance"].map((f) => (
+              {["Everything in Free", "Lower concierge fee", "Priority repair matching", "Faster provider confirmations", "Device health alerts", "Warranty assistance"].map((f) => (
                 <li key={f} className="flex items-center gap-2.5 text-sm text-foreground">
                   <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <Check className="w-3 h-3 text-primary" />
