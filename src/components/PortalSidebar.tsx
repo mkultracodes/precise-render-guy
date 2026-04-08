@@ -33,7 +33,7 @@ export function PortalSidebar() {
           <img src={bearMascot} alt="Repair Bear" className="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20 shrink-0" />
           {!collapsed && (
             <span className="font-display font-bold text-xl text-foreground">
-              Repair<span className="text-gradient">Bear</span>
+              Repair <span className="text-gradient">Bear</span>
             </span>
           )}
         </a>
