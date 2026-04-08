@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { ChevronRight, MapPin, Phone, Clock, Printer, Receipt } from "lucide-react";
+import { ChevronRight, MapPin, Phone, Clock, Printer, Receipt, Wrench } from "lucide-react";
 import PortalLayout from "@/components/PortalLayout";
 import {
   Dialog,
