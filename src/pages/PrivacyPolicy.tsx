@@ -26,7 +26,7 @@ const PrivacyPolicy = () => (
           <h3 className="font-semibold text-foreground text-base">2. How We Use Your Information</h3>
           <p>We use your information to facilitate device repair coordination, communicate with you about your repairs, improve our services, and send relevant notifications about your account and repair status.</p>
           <h3 className="font-semibold text-foreground text-base">3. Data Sharing</h3>
-          <p>We share your device and contact information with repair shops you select through our platform. We do not sell your personal data to third parties.</p>
+          <p>We share your device and contact information with repair providers you select through our platform. We do not sell your personal data to third parties.</p>
           <h3 className="font-semibold text-foreground text-base">4. Data Security</h3>
           <p>We implement industry-standard security measures to protect your information. However, no method of electronic transmission or storage is 100% secure.</p>
           <h3 className="font-semibold text-foreground text-base">5. Your Rights</h3>

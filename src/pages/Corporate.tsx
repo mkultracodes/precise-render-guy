@@ -76,7 +76,7 @@ const Corporate = () => {
                 <span className="text-gradient">platform scaling nationwide</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-                Repair Bear is a dispatch-first platform connecting consumers to trusted local repair shops — generating revenue through lead fees, subscriptions, and service expansion.
+                Repair Bear is a dispatch-first platform connecting consumers to trusted local repair providers — generating revenue through lead fees, subscriptions, and service expansion.
               </p>
               <div className="flex justify-center gap-4">
                 <Button variant="hero" size="lg" className="h-14 px-8 text-lg group/btn relative overflow-hidden">
@@ -192,7 +192,7 @@ const Corporate = () => {
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Two-Sided Platform</h2>
               <p className="text-muted-foreground text-lg max-w-lg mx-auto">
-                Seamless experiences for both consumers and repair shops
+                Seamless experiences for both consumers and repair providers
               </p>
             </div>
             <div ref={systemRef} className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
