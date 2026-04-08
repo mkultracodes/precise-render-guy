@@ -323,30 +323,30 @@ const HowItWorks = () => {
             return (
               <div
                 key={s.step}
-                className={`relative group transition-all duration-700 ${
-                  isRevealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                className={`relative group md:transition-all md:duration-700 ${
+                  isRevealed ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-10"
                 }`}
               >
                 {i < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-10 left-[calc(50%+40px)] w-[calc(100%-40px)] h-px bg-gradient-to-r from-primary/20 to-transparent" />
                 )}
 
-                <div className={`bg-gradient-to-b ${s.gradient} glass-card rounded-xl md:rounded-2xl p-3 md:p-6 text-center transition-all duration-500 h-full flex flex-col min-h-[200px] md:min-h-[320px] ${
-                  isActive && !allDone ? "shadow-xl shadow-primary/10 ring-1 ring-primary/20 -translate-y-1" : "hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
+                <div className={`bg-gradient-to-b ${s.gradient} glass-card rounded-xl md:rounded-2xl p-3 md:p-6 text-center h-full flex flex-col min-h-0 md:min-h-[320px] md:transition-all md:duration-500 ${
+                  isActive && !allDone ? "md:shadow-xl md:shadow-primary/10 md:ring-1 md:ring-primary/20 md:-translate-y-1" : "md:hover:shadow-xl md:hover:shadow-primary/5 md:hover:-translate-y-1"
                 }`}>
-                  <div className={`absolute -top-2.5 md:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center font-display font-bold text-[10px] md:text-sm transition-all duration-500 ${
+                  <div className={`absolute -top-2.5 md:-top-4 left-1/2 -translate-x-1/2 w-5 h-5 md:w-8 md:h-8 rounded-full flex items-center justify-center font-display font-bold text-[9px] md:text-sm bg-primary text-primary-foreground md:transition-all md:duration-500 ${
                     isDone
-                      ? "bg-success text-white shadow-lg shadow-success/30"
+                      ? "md:bg-success md:shadow-lg md:shadow-success/30"
                       : isActive
-                      ? "bg-bear-gold text-white shadow-lg shadow-bear-gold/40 animate-pulse"
-                      : "bg-muted text-muted-foreground shadow-lg shadow-muted/20"
+                      ? "md:bg-bear-gold md:shadow-lg md:shadow-bear-gold/40 md:animate-pulse"
+                      : ""
                   }`}>
                     {s.step}
                   </div>
-                  <div className="w-9 h-9 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-card border border-border/50 flex items-center justify-center mx-auto mt-2 md:mt-4 mb-2 md:mb-4 group-hover:rotate-3 group-hover:scale-105 transition-all duration-300 shadow-sm">
-                    <s.icon className="w-4 h-4 md:w-7 md:h-7 text-primary" />
+                  <div className="w-8 h-8 md:w-14 md:h-14 rounded-lg md:rounded-2xl bg-card border border-border/50 flex items-center justify-center mx-auto mt-1.5 md:mt-4 mb-1.5 md:mb-4 shadow-sm">
+                    <s.icon className="w-3.5 h-3.5 md:w-7 md:h-7 text-primary" />
                   </div>
-                  <h3 className="font-display font-semibold text-xs md:text-lg text-foreground mb-1 md:mb-2">{s.title}</h3>
+                  <h3 className="font-display font-semibold text-[11px] leading-tight md:text-lg text-foreground mb-0.5 md:mb-2">{s.title}</h3>
                   <p className="text-[10px] md:text-sm text-muted-foreground leading-relaxed hidden md:block">{s.description}</p>
 
                   <div className="flex-1 flex flex-col justify-end">
