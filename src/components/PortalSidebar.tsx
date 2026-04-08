@@ -1,4 +1,4 @@
-import { Wrench, Plus, History, MessageCircle, Settings, Phone } from "lucide-react";
+import { Wrench, Plus, History, MessageCircle, Settings } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import bearMascot from "@/assets/repair-bear-mascot.jpg";
@@ -14,10 +14,9 @@ import {
 } from "@/components/ui/sidebar";
 
 const navItems = [
-  { title: "Active Repair", url: "/portal", icon: Wrench },
+  { title: "Active Repairs", url: "/portal", icon: Wrench },
   { title: "Start a New Repair", url: "/portal/new-repair", icon: Plus },
   { title: "History", url: "/portal/history", icon: History },
-  { title: "Contact Us", url: "/portal/contact", icon: Phone },
   { title: "Contact Support", url: "/portal/support", icon: MessageCircle },
   { title: "Settings", url: "/profile", icon: Settings },
 ];
@@ -34,7 +33,7 @@ export function PortalSidebar() {
           <img src={bearMascot} alt="Repair Bear" className="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20 shrink-0" />
           {!collapsed && (
             <span className="font-display font-bold text-xl text-foreground">
-              Repair<span className="text-gradient">Bear</span>
+              Repair <span className="text-gradient">Bear</span>
             </span>
           )}
         </a>
