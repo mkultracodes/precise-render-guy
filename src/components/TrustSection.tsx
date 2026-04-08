@@ -30,7 +30,7 @@ const TrustSection = () => {
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="trust" className="py-20 md:py-28 relative">
+    <section id="trust" className="py-12 md:py-28 relative">
       <div className="absolute inset-0 tech-grid opacity-20" />
       <div className="container mx-auto px-4 relative">
         <div className="text-center mb-16">
@@ -46,7 +46,7 @@ const TrustSection = () => {
         </div>
 
         {/* Stats */}
-        <div ref={statsRef} className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-16">
+        <div ref={statsRef} className="grid grid-cols-3 gap-3 md:gap-6 max-w-2xl mx-auto mb-10 md:mb-16">
           {stats.map((s, i) => (
             <div
               key={s.label}
@@ -65,7 +65,7 @@ const TrustSection = () => {
         </div>
 
         {/* Testimonials */}
-        <div ref={cardsRef} className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
             <div
               key={t.name}

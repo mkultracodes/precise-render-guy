@@ -64,7 +64,7 @@ const ChatAnimation = ({ active, done }: { active: boolean; done: boolean }) => 
   }, [active, done]);
 
   return (
-    <div className="mt-3 flex flex-col gap-1.5 w-full min-h-[5.5rem]">
+    <div className="mt-2 md:mt-3 flex flex-col gap-1 md:gap-1.5 w-full min-h-[3.5rem] md:min-h-[5.5rem]">
       {chatMessages.slice(0, visibleMessages).map((m, i) => (
         <div key={i} className={`flex ${m.isUser ? "justify-end" : "justify-start"}`}>
           <div className={`rounded-xl px-2.5 py-1 text-xs max-w-[85%] ${m.isUser ? "bg-primary/20 text-foreground rounded-br-sm" : "bg-muted text-muted-foreground rounded-bl-sm"}`}>
@@ -112,7 +112,7 @@ const ScrollingNumber = ({ target, duration = 1200, active, done }: { target: nu
 };
 
 const PriceAnimation = ({ active, done }: { active: boolean; done: boolean }) => (
-  <div className="mt-3 flex flex-col gap-2 w-full min-h-[5.5rem]">
+  <div className="mt-2 md:mt-3 flex flex-col gap-1 md:gap-2 w-full min-h-[3.5rem] md:min-h-[5.5rem]">
     {priceItems.map((item, i) => (
       <div key={item.label} className="flex items-center justify-between rounded-lg bg-muted/50 border border-border/30 px-2.5 py-1.5">
         <span className="text-xs text-muted-foreground">{item.label}</span>
@@ -148,7 +148,7 @@ const ShopAnimation = ({ active, done }: { active: boolean; done: boolean }) => 
   }, [active]);
 
   return (
-    <div className="mt-3 flex flex-col gap-1.5 w-full min-h-[5.5rem]">
+    <div className="mt-2 md:mt-3 flex flex-col gap-1 md:gap-1.5 w-full min-h-[3.5rem] md:min-h-[5.5rem]">
       {shops.map((shop, i) => (
         <div
           key={shop.name}
@@ -193,7 +193,7 @@ const TrackerAnimation = ({ active, done }: { active: boolean; done: boolean }) 
   }, [active, done]);
 
   return (
-    <div className="mt-3 w-full flex flex-col items-center gap-0 min-h-[5.5rem] justify-center">
+    <div className="mt-2 md:mt-3 w-full flex flex-col items-center gap-0 min-h-[3.5rem] md:min-h-[5.5rem] justify-center">
       <div className="relative w-full flex items-center justify-between px-1">
         <div className="absolute top-1/2 left-1 right-1 h-0.5 -translate-y-1/2 bg-border/50 rounded-full" />
         <div
@@ -298,27 +298,27 @@ const HowItWorks = () => {
   }, [activeCard, cycleKey, cardsVisible]);
 
   return (
-    <section id="how-it-works" className="py-20 md:py-28 relative">
+    <section id="how-it-works" className="py-12 md:py-28 relative">
       <div className="absolute inset-0 tech-grid opacity-30" />
       <div className="container mx-auto px-4 relative">
         <div
           ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 ${
+          className={`text-center mb-8 md:mb-16 transition-all duration-700 ${
             headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-medium mb-3 md:mb-4">
             Simple process
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-4">
             How It Works
           </h2>
-          <p className="text-muted-foreground text-lg max-w-md mx-auto">
+          <p className="text-muted-foreground text-sm md:text-lg max-w-md mx-auto">
             From broken device to fixed — in four simple steps.
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        <div ref={cardsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 items-stretch">
           {steps.map((s, i) => {
             const isActive = activeCard === i;
             const isDone = i < activeCard || (i === activeCard && allDone);
@@ -334,10 +334,10 @@ const HowItWorks = () => {
                   <div className="hidden lg:block absolute top-10 left-[calc(50%+40px)] w-[calc(100%-40px)] h-px bg-gradient-to-r from-primary/20 to-transparent" />
                 )}
 
-                <div className={`bg-gradient-to-b ${s.gradient} glass-card rounded-2xl p-6 text-center transition-all duration-500 h-full flex flex-col min-h-[320px] ${
+                <div className={`bg-gradient-to-b ${s.gradient} glass-card rounded-xl md:rounded-2xl p-3 md:p-6 text-center transition-all duration-500 h-full flex flex-col min-h-[200px] md:min-h-[320px] ${
                   isActive && !allDone ? "shadow-xl shadow-primary/10 ring-1 ring-primary/20 -translate-y-1" : "hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
                 }`}>
-                  <div className={`absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center font-display font-bold text-sm transition-all duration-500 ${
+                  <div className={`absolute -top-2.5 md:-top-4 left-1/2 -translate-x-1/2 w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center font-display font-bold text-[10px] md:text-sm transition-all duration-500 ${
                     isDone
                       ? "bg-success text-white shadow-lg shadow-success/30"
                       : isActive
@@ -346,17 +346,19 @@ const HowItWorks = () => {
                   }`}>
                     {s.step}
                   </div>
-                  <div className="w-14 h-14 rounded-2xl bg-card border border-border/50 flex items-center justify-center mx-auto mt-4 mb-4 group-hover:rotate-3 group-hover:scale-105 transition-all duration-300 shadow-sm">
-                    <s.icon className="w-7 h-7 text-primary" />
+                  <div className="w-9 h-9 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-card border border-border/50 flex items-center justify-center mx-auto mt-2 md:mt-4 mb-2 md:mb-4 group-hover:rotate-3 group-hover:scale-105 transition-all duration-300 shadow-sm">
+                    <s.icon className="w-4 h-4 md:w-7 md:h-7 text-primary" />
                   </div>
-                  <h3 className="font-display font-semibold text-lg text-foreground mb-2">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{s.description}</p>
+                  <h3 className="font-display font-semibold text-xs md:text-lg text-foreground mb-1 md:mb-2">{s.title}</h3>
+                  <p className="text-[10px] md:text-sm text-muted-foreground leading-relaxed hidden md:block">{s.description}</p>
 
                   <div className="flex-1 flex flex-col justify-end">
-                    {s.animation === "chat" && <ChatAnimation active={isActive} done={isDone} key={`chat-${cycleKey}`} />}
-                    {s.animation === "price" && <PriceAnimation active={isActive} done={isDone} key={`price-${cycleKey}`} />}
-                    {s.animation === "shop" && <ShopAnimation active={isActive} done={isDone} key={`shop-${cycleKey}`} />}
-                    {s.animation === "tracker" && <TrackerAnimation active={isActive} done={isDone} key={`tracker-${cycleKey}`} />}
+                    <div className="hidden md:block">
+                      {s.animation === "chat" && <ChatAnimation active={isActive} done={isDone} key={`chat-${cycleKey}`} />}
+                      {s.animation === "price" && <PriceAnimation active={isActive} done={isDone} key={`price-${cycleKey}`} />}
+                      {s.animation === "shop" && <ShopAnimation active={isActive} done={isDone} key={`shop-${cycleKey}`} />}
+                      {s.animation === "tracker" && <TrackerAnimation active={isActive} done={isDone} key={`tracker-${cycleKey}`} />}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -3,7 +3,7 @@ import bearMascot from "@/assets/repair-bear-mascot.jpg";
 
 const Footer = () => {
   return (
-    <footer className="py-16 border-t border-border/50 relative overflow-hidden">
+    <footer className="py-10 md:py-16 border-t border-border/50 relative overflow-hidden">
       <div className="absolute inset-0 dot-pattern opacity-20" />
       <div className="container mx-auto px-4 relative">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
