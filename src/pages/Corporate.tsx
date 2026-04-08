@@ -10,7 +10,7 @@ import {
 
 
 const metrics = [
-  { label: "Repairs Completed", value: "10,000+", icon: Wrench },
+  { label: "Repairs Completed", value: "12,000+", icon: Wrench },
   { label: "Partner Shops", value: "500+", icon: Building2 },
   { label: "Cities Covered", value: "50+", icon: Globe },
   { label: "Customer Satisfaction", value: "4.9/5", icon: TrendingUp },
