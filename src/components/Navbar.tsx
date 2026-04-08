@@ -59,7 +59,7 @@ const Navbar = () => {
             </Button>
           </Link>
           <Link to="/shop-login">
-            <Button variant="hero" size="sm">
+            <Button variant="outline" size="sm">
               Provider Login
             </Button>
           </Link>
@@ -97,7 +97,7 @@ const Navbar = () => {
               </Button>
             </Link>
             <Link to="/shop-login" onClick={() => setMobileOpen(false)}>
-              <Button variant="hero" size="sm" className="w-full">
+              <Button variant="outline" size="sm" className="w-full">
                 Provider Login
               </Button>
             </Link>
