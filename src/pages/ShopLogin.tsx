@@ -86,6 +86,11 @@ const ShopLogin = () => {
               <Link to="/forgot-password" className="text-primary hover:underline">Forgot Password?</Link>
               <Link to="/reset-password" className="text-primary hover:underline">Reset Password</Link>
             </div>
+
+            <div className="text-center text-sm pt-2 border-t border-border/50">
+              <span className="text-muted-foreground">Don't have a shop account? </span>
+              <Link to="/create-shop-account" className="text-primary font-medium hover:underline">Register your shop</Link>
+            </div>
           </form>
         </div>
       </div>
