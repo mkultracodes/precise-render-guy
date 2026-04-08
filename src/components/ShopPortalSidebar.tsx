@@ -1,4 +1,4 @@
-import { Wrench, Clock, Settings, Bell, Check } from "lucide-react";
+import { Wrench, Clock, Settings, Bell, Check, MessageCircle } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import bearMascot from "@/assets/repair-bear-mascot.jpg";
@@ -16,6 +16,7 @@ const navItems = [
   { title: "Incoming Requests", url: "/shop", icon: Bell },
   { title: "Active Jobs", url: "/shop/active", icon: Wrench },
   { title: "Completed", url: "/shop/completed", icon: Check },
+  { title: "Contact Support", url: "/shop/support", icon: MessageCircle },
   { title: "Settings", url: "/shop/settings", icon: Settings },
 ];
 
