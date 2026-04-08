@@ -30,7 +30,7 @@ const ProfileSettings = () => {
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
     localStorage.setItem("repairbear_user", JSON.stringify(profile));
-    toast.success("Profile updated");
+    toast.success("Changes saved successfully!");
   };
 
   const update = (field: string, value: string) =>
