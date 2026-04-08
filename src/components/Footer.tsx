@@ -53,7 +53,12 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/shop" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Shop Portal
+                  Provider Portal
+                </Link>
+              </li>
+              <li>
+                <Link to="/payment" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Payment
                 </Link>
               </li>
             </ul>
@@ -64,23 +69,23 @@ const Footer = () => {
             <h4 className="font-display font-semibold text-foreground mb-4 text-sm">Company</h4>
             <ul className="space-y-2.5">
               <li>
-                <Link to="/corporate" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Investors
+                <a href="https://repairbear.ai" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Corporate
+                </a>
+              </li>
+              <li>
+                <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Contact
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Careers
-                </a>
+                <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <Link to="/payment" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Payment
+                <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Terms & Conditions
                 </Link>
               </li>
             </ul>
@@ -93,9 +98,9 @@ const Footer = () => {
             © {new Date().getFullYear()} Repair Bear. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Privacy</a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Terms</a>
-            <a href="#" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Support</a>
+            <Link to="/privacy-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Privacy</Link>
+            <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Terms</Link>
+            <Link to="/contact" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Support</Link>
           </div>
         </div>
       </div>
