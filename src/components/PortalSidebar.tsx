@@ -1,4 +1,4 @@
-import { Wrench, Plus, History, MessageCircle, Settings, Phone } from "lucide-react";
+import { Wrench, Plus, History, MessageCircle, Settings } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import bearMascot from "@/assets/repair-bear-mascot.jpg";
@@ -14,10 +14,9 @@ import {
 } from "@/components/ui/sidebar";
 
 const navItems = [
-  { title: "Active Repair", url: "/portal", icon: Wrench },
+  { title: "Active Repairs", url: "/portal", icon: Wrench },
   { title: "Start a New Repair", url: "/portal/new-repair", icon: Plus },
   { title: "History", url: "/portal/history", icon: History },
-  { title: "Contact Us", url: "/portal/contact", icon: Phone },
   { title: "Contact Support", url: "/portal/support", icon: MessageCircle },
   { title: "Settings", url: "/profile", icon: Settings },
 ];
