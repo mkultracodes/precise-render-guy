@@ -73,7 +73,7 @@ const HeroSection = () => {
                 ))}
               </div>
               <p className="text-sm text-muted-foreground">
-                <span className="font-semibold text-foreground">10,000+</span> devices repaired
+                <span className="font-semibold text-foreground">12,000+</span> devices repaired
               </p>
             </div>
           </div>
