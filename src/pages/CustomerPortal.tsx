@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { ChevronRight, MapPin, Phone, Clock, X } from "lucide-react";
+import { ChevronRight, MapPin, Phone, Clock, Printer, Receipt } from "lucide-react";
 import PortalLayout from "@/components/PortalLayout";
 import {
   Dialog,
@@ -34,19 +34,52 @@ const orderDetails = {
   issue: "Cracked screen — front display shattered, touch partially unresponsive",
   description: "Full OLED display assembly replacement with OEM-quality part. Includes digitizer, front glass, and frame re-seal. Device diagnostics pre- and post-repair.",
   parts: [
-    { name: "iPhone 14 Pro OLED Display Assembly", qty: 1, price: "$89.00" },
-    { name: "Adhesive Seal Kit", qty: 1, price: "$5.00" },
-    { name: "Labor — Screen Replacement", qty: 1, price: "$35.00" },
+    { name: "iPhone 14 Pro OLED Display Assembly", qty: 1, price: 89.0 },
+    { name: "Adhesive Seal Kit", qty: 1, price: 5.0 },
+    { name: "Labor — Screen Replacement", qty: 1, price: 35.0 },
   ],
-  estimateLow: "$99.00",
-  estimateHigh: "$129.00",
   shop: shopInfo.name,
-  technician: "Marcus R.",
-  warranty: "90-day repair warranty",
+};
+
+const receiptDetails = {
+  receiptNumber: "RB-REC-00417",
+  date: "April 5, 2026",
+  description: "Repair Bear coordination fee",
+  amount: "$25.00",
+  paymentMethod: "Visa ending in 4242",
+  status: "Paid",
+};
+
+const estimateTotal = orderDetails.parts.reduce((sum, p) => sum + p.price, 0);
+
+const handlePrint = (ref: React.RefObject<HTMLDivElement | null>) => {
+  if (!ref.current) return;
+  const printWindow = window.open("", "_blank");
+  if (!printWindow) return;
+  printWindow.document.write(`
+    <html><head><title>Print</title>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 40px; color: #1a1a1a; }
+      .print-content { max-width: 600px; margin: 0 auto; }
+      .header { display: flex; justify-content: space-between; margin-bottom: 20px; }
+      .label { font-size: 11px; color: #888; margin-bottom: 2px; }
+      .value { font-weight: 600; font-size: 14px; }
+      .divider { border-top: 1px solid #e5e5e5; margin: 16px 0; }
+      .line-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+      .line-item:last-child { border-bottom: none; }
+      .total { display: flex; justify-content: space-between; padding: 12px 0; font-weight: 700; font-size: 16px; border-top: 2px solid #1a1a1a; margin-top: 8px; }
+    </style></head><body>
+    <div class="print-content">${ref.current.innerHTML}</div>
+    </body></html>
+  `);
+  printWindow.document.close();
+  printWindow.print();
 };
 
 const CustomerPortal = () => {
   const { ref: dashRef, isVisible: dashVisible } = useScrollReveal();
+  const orderPrintRef = useRef<HTMLDivElement>(null);
+  const receiptPrintRef = useRef<HTMLDivElement>(null);
 
   return (
     <PortalLayout>
@@ -149,6 +182,62 @@ const CustomerPortal = () => {
               </Dialog>
             </div>
 
+            {/* Repair Bear receipt link */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="w-full flex items-center gap-2 text-sm text-primary hover:underline mb-4 justify-center">
+                  <Receipt className="w-4 h-4" />
+                  View Repair Bear Receipt — $25.00 paid
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <div className="flex items-center justify-between">
+                    <DialogTitle className="font-display text-xl">Receipt</DialogTitle>
+                    <button
+                      onClick={() => handlePrint(receiptPrintRef)}
+                      className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-colors"
+                      title="Print Receipt"
+                    >
+                      <Printer className="w-4 h-4 text-foreground" />
+                    </button>
+                  </div>
+                </DialogHeader>
+                <div ref={receiptPrintRef} className="space-y-4 pt-2">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="text-xs text-muted-foreground">Receipt #</p>
+                      <p className="font-bold text-foreground">{receiptDetails.receiptNumber}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs text-muted-foreground">Date</p>
+                      <p className="font-bold text-foreground">{receiptDetails.date}</p>
+                    </div>
+                  </div>
+                  <div className="border-t border-border/50" />
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Description</p>
+                    <p className="text-sm font-medium text-foreground">{receiptDetails.description}</p>
+                  </div>
+                  <div className="flex justify-between items-center bg-secondary/30 rounded-lg px-3 py-2">
+                    <p className="text-sm text-foreground">Coordination Fee</p>
+                    <p className="text-sm font-bold text-foreground">{receiptDetails.amount}</p>
+                  </div>
+                  <div className="border-t border-border/50" />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-secondary/50 rounded-xl p-3">
+                      <p className="text-xs text-muted-foreground">Payment</p>
+                      <p className="font-bold text-foreground text-sm">{receiptDetails.paymentMethod}</p>
+                    </div>
+                    <div className="bg-secondary/50 rounded-xl p-3">
+                      <p className="text-xs text-muted-foreground">Status</p>
+                      <p className="font-bold text-success text-sm">{receiptDetails.status}</p>
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
+
             {/* View Details — order popup */}
             <Dialog>
               <DialogTrigger asChild>
@@ -159,9 +248,18 @@ const CustomerPortal = () => {
               </DialogTrigger>
               <DialogContent className="sm:max-w-lg max-h-[85vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle className="font-display text-xl">Repair Order</DialogTitle>
+                  <div className="flex items-center justify-between">
+                    <DialogTitle className="font-display text-xl">Repair Order</DialogTitle>
+                    <button
+                      onClick={() => handlePrint(orderPrintRef)}
+                      className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-colors"
+                      title="Print Order"
+                    >
+                      <Printer className="w-4 h-4 text-foreground" />
+                    </button>
+                  </div>
                 </DialogHeader>
-                <div className="space-y-5 pt-2">
+                <div ref={orderPrintRef} className="space-y-5 pt-2">
                   {/* Order header */}
                   <div className="flex justify-between items-start">
                     <div>
@@ -202,27 +300,16 @@ const CustomerPortal = () => {
                             <p className="text-sm font-medium text-foreground">{part.name}</p>
                             <p className="text-xs text-muted-foreground">Qty: {part.qty}</p>
                           </div>
-                          <p className="text-sm font-bold text-foreground">{part.price}</p>
+                          <p className="text-sm font-bold text-foreground">${part.price.toFixed(2)}</p>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="border-t border-border/50" />
-
-                  {/* Totals & info */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-secondary/50 rounded-xl p-3">
-                      <p className="text-xs text-muted-foreground">Estimate Range</p>
-                      <p className="font-bold text-foreground">{orderDetails.estimateLow} – {orderDetails.estimateHigh}</p>
-                    </div>
-                    <div className="bg-secondary/50 rounded-xl p-3">
-                      <p className="text-xs text-muted-foreground">Technician</p>
-                      <p className="font-bold text-foreground">{orderDetails.technician}</p>
-                    </div>
-                  </div>
-                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-3 text-center">
-                    <p className="text-sm font-medium text-primary">{orderDetails.warranty}</p>
+                  {/* Total */}
+                  <div className="flex justify-between items-center border-t-2 border-foreground pt-3">
+                    <p className="font-bold text-foreground">Estimated Total</p>
+                    <p className="font-bold text-lg text-foreground">${estimateTotal.toFixed(2)}</p>
                   </div>
                 </div>
               </DialogContent>
