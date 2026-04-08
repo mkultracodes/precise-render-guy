@@ -14,7 +14,7 @@ const ValueStrip = () => {
     <section ref={ref} className="py-8 bg-secondary/30 border-y border-border/50 relative overflow-hidden">
       <div className="absolute inset-0 dot-pattern opacity-40" />
       <div className="container mx-auto px-4 relative">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
           {values.map((v, i) => (
             <div
               key={v.label}

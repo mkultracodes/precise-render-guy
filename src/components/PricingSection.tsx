@@ -18,9 +18,6 @@ const PricingSection = () => {
             headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-bear-gold/10 text-bear-gold text-sm font-medium mb-4">
-            💰 Fair pricing
-          </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Simple, Fair Pricing
           </h2>
