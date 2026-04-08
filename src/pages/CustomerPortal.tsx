@@ -110,27 +110,37 @@ const CustomerPortal = () => {
             </div>
 
             {/* Progress timeline */}
-            <div className="flex items-center gap-0 mb-6">
-              {statusSteps.map((step, i) => (
-                <div key={step.label} className="flex-1 flex items-center">
-                  <div className="flex flex-col items-center flex-1">
-                    <div
-                      className={`w-4 h-4 rounded-full border-2 transition-all duration-500 ${
-                        step.done ? "bg-success border-success" :
-                        step.active ? "bg-bear-gold border-bear-gold animate-pulse" :
-                        "bg-secondary border-border"
-                      }`}
-                      style={{ transitionDelay: `${i * 100}ms` }}
-                    />
-                    <span className={`text-[10px] mt-1.5 text-center ${step.done || step.active ? "text-foreground font-medium" : "text-muted-foreground"}`}>
+            <div className="mb-6">
+              {/* Dots and lines row */}
+              <div className="flex items-center">
+                {statusSteps.map((step, i) => (
+                  <div key={step.label} className="flex-1 flex items-center">
+                    <div className="flex-1 flex justify-center">
+                      <div
+                        className={`w-4 h-4 rounded-full border-2 shrink-0 transition-all duration-500 ${
+                          step.done ? "bg-success border-success" :
+                          step.active ? "bg-bear-gold border-bear-gold animate-pulse" :
+                          "bg-secondary border-border"
+                        }`}
+                        style={{ transitionDelay: `${i * 100}ms` }}
+                      />
+                    </div>
+                    {i < statusSteps.length - 1 && (
+                      <div className={`h-0.5 flex-1 ${step.done ? "bg-success" : "bg-border"}`} />
+                    )}
+                  </div>
+                ))}
+              </div>
+              {/* Labels row */}
+              <div className="flex mt-1.5">
+                {statusSteps.map((step) => (
+                  <div key={step.label} className="flex-1 text-center">
+                    <span className={`text-[10px] ${step.done || step.active ? "text-foreground font-medium" : "text-muted-foreground"}`}>
                       {step.label}
                     </span>
                   </div>
-                  {i < statusSteps.length - 1 && (
-                    <div className={`h-0.5 flex-1 -mt-4 ${step.done ? "bg-success" : "bg-border"}`} />
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4 mb-4">

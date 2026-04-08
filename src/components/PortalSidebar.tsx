@@ -27,7 +27,7 @@ export function PortalSidebar() {
   const location = useLocation();
 
   return (
-    <Sidebar collapsible="icon" className="border-r border-border/50">
+    <Sidebar collapsible="offcanvas" className="border-r border-border/50">
       <div className="h-16 flex items-center px-4 border-b border-border/50">
         <a href="/" className="flex items-center gap-2.5">
           <img src={bearMascot} alt="Repair Bear" className="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20 shrink-0" />
