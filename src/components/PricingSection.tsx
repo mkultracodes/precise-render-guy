@@ -7,7 +7,7 @@ const PricingSection = () => {
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <section id="pricing" className="py-20 md:py-28 relative overflow-hidden">
+    <section id="pricing" className="py-12 md:py-28 relative overflow-hidden">
       <div className="absolute inset-0 dot-pattern opacity-30" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/3 blur-3xl" />
 

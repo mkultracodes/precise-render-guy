@@ -4,7 +4,7 @@ import PhoneAnimation from "@/components/PhoneAnimation";
 
 const HeroSection = () => {
   return (
-    <section className="pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden relative">
+    <section className="pt-20 pb-10 md:pt-36 md:pb-24 overflow-hidden relative">
       {/* Tech grid background */}
       <div className="absolute inset-0 tech-grid opacity-50" />
       {/* Gradient orbs */}
@@ -45,14 +45,14 @@ const HeroSection = () => {
               className="flex flex-wrap gap-4 pt-2 animate-fade-up"
               style={{ animationDelay: "0.3s" }}
             >
-              <Button variant="hero" size="lg" className="h-14 px-8 text-lg group/cta relative overflow-hidden">
+              <Button variant="hero" size="lg" className="h-12 md:h-14 px-6 md:px-8 text-base md:text-lg group/cta relative overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">
                   Get My Repair Quote
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover/cta:translate-x-1" />
                 </span>
                 <div className="absolute inset-0 shimmer" />
               </Button>
-              <Button variant="hero-outline" size="lg" className="h-14 px-8 text-lg hover:border-primary/40 transition-all duration-300">
+              <Button variant="hero-outline" size="lg" className="h-12 md:h-14 px-6 md:px-8 text-base md:text-lg hover:border-primary/40 transition-all duration-300">
                 See How It Works
               </Button>
             </div>
