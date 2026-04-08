@@ -55,6 +55,16 @@ const handlePrint = (ref: React.RefObject<HTMLDivElement | null>) => {
 
 const RepairHistory = () => {
   const orderPrintRef = useRef<HTMLDivElement>(null);
+  const receiptPrintRef = useRef<HTMLDivElement>(null);
+
+  const receiptDetails = {
+    receiptNumber: "RB-REC-00312",
+    date: pastRepair.completedDate,
+    description: "Repair Bear coordination fee",
+    amount: "$25.00",
+    paymentMethod: "Visa ending in 4242",
+    status: "Paid",
+  };
 
   return (
     <PortalLayout>
@@ -73,7 +83,7 @@ const RepairHistory = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-3 gap-4 mb-4">
             <div className="bg-secondary/50 rounded-xl p-3">
               <p className="text-xs text-muted-foreground">Estimated</p>
               <p className="font-bold text-foreground text-sm">{pastRepair.estimatedCost}</p>
@@ -81,6 +91,10 @@ const RepairHistory = () => {
             <div className="bg-secondary/50 rounded-xl p-3">
               <p className="text-xs text-muted-foreground">Shop</p>
               <p className="font-bold text-foreground text-sm">{pastRepair.shop}</p>
+            </div>
+            <div className="bg-secondary/50 rounded-xl p-3">
+              <p className="text-xs text-muted-foreground">Completed</p>
+              <p className="font-bold text-foreground text-sm">{pastRepair.completedDate}</p>
             </div>
           </div>
 
@@ -165,6 +179,59 @@ const RepairHistory = () => {
               </button>
             </DialogContent>
           </Dialog>
+
+            {/* Repair Bear receipt link */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="w-full flex items-center gap-2 text-sm text-primary hover:underline mt-3 justify-center">
+                  <Receipt className="w-4 h-4" />
+                  View Repair Bear Receipt
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="font-display text-xl">Receipt</DialogTitle>
+                </DialogHeader>
+                <div ref={receiptPrintRef} className="space-y-4 pt-2">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="text-xs text-muted-foreground">Receipt #</p>
+                      <p className="font-bold text-foreground">{receiptDetails.receiptNumber}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs text-muted-foreground">Date</p>
+                      <p className="font-bold text-foreground">{receiptDetails.date}</p>
+                    </div>
+                  </div>
+                  <div className="border-t border-border/50" />
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Description</p>
+                    <p className="text-sm font-medium text-foreground">{receiptDetails.description}</p>
+                  </div>
+                  <div className="flex justify-between items-center bg-secondary/30 rounded-lg px-3 py-2">
+                    <p className="text-sm text-foreground">Coordination Fee</p>
+                    <p className="text-sm font-bold text-foreground">{receiptDetails.amount}</p>
+                  </div>
+                  <div className="border-t border-border/50" />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-secondary/50 rounded-xl p-3">
+                      <p className="text-xs text-muted-foreground">Payment</p>
+                      <p className="font-bold text-foreground text-sm">{receiptDetails.paymentMethod}</p>
+                    </div>
+                    <div className="bg-secondary/50 rounded-xl p-3">
+                      <p className="text-xs text-muted-foreground">Status</p>
+                      <p className="font-bold text-success text-sm">{receiptDetails.status}</p>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => handlePrint(receiptPrintRef)}
+                  className="w-full flex items-center justify-center gap-2 mt-2 py-2 rounded-xl bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium text-foreground"
+                >
+                  <Printer className="w-4 h-4" /> Print Receipt
+                </button>
+              </DialogContent>
+            </Dialog>
         </div>
 
         {/* No more past repairs */}
