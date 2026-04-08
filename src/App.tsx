@@ -21,6 +21,9 @@ import NewRepair from "./pages/NewRepair.tsx";
 import RepairHistory from "./pages/RepairHistory.tsx";
 import CreateAccount from "./pages/CreateAccount.tsx";
 import Payment from "./pages/Payment.tsx";
+import Contact from "./pages/Contact.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import Terms from "./pages/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
