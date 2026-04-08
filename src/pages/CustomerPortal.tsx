@@ -57,14 +57,11 @@ const CustomerPortal = () => {
 
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-2xl">
-          {/* New Repair Button */}
-          <div className="mb-8 animate-fade-up flex justify-center">
-            <button className="glass-card rounded-2xl px-8 py-5 flex flex-col items-center gap-2 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Plus className="w-6 h-6 text-primary" />
-              </div>
-              <span className="text-sm font-medium text-foreground">New Repair</span>
-            </button>
+          {/* Welcome */}
+          <div className="mb-8 animate-fade-up">
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+              Hi, MK — thanks for using RepairBear
+            </h1>
           </div>
 
           {/* Active Repair Card */}
