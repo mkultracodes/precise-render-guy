@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import bearMascot from "@/assets/repair-bear-mascot.jpg";
-import { ChevronRight, Plus, LogOut, Settings } from "lucide-react";
+import { ChevronRight, Plus, LogOut, Settings, MessageCircle, History } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const statusSteps = [
@@ -57,14 +57,11 @@ const CustomerPortal = () => {
 
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-2xl">
-          {/* New Repair Button */}
-          <div className="mb-8 animate-fade-up flex justify-center">
-            <button className="glass-card rounded-2xl px-8 py-5 flex flex-col items-center gap-2 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Plus className="w-6 h-6 text-primary" />
-              </div>
-              <span className="text-sm font-medium text-foreground">New Repair</span>
-            </button>
+          {/* Welcome */}
+          <div className="mb-8 animate-fade-up">
+            <h1 className="text-2xl md:text-3xl font-bold text-foreground">
+              Hi, MK — thanks for using RepairBear
+            </h1>
           </div>
 
           {/* Active Repair Card */}
@@ -126,6 +123,22 @@ const CustomerPortal = () => {
               </Button>
             </div>
           </section>
+
+          {/* Quick Actions */}
+          <div className="grid grid-cols-3 gap-4 mt-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            {[
+              { icon: Plus, label: "New Repair", color: "text-primary" },
+              { icon: History, label: "History", color: "text-accent" },
+              { icon: MessageCircle, label: "Contact Support", color: "text-success" },
+            ].map((a) => (
+              <button key={a.label} className="glass-card rounded-2xl p-4 flex flex-col items-center gap-2 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 group">
+                <div className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <a.icon className={`w-5 h-5 ${a.color}`} />
+                </div>
+                <span className="text-sm font-medium text-foreground">{a.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </main>
     </div>
