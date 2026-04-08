@@ -93,15 +93,10 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-border/50 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Repair Bear. All rights reserved.
+        <div className="border-t border-border/50 pt-6">
+          <p className="text-xs text-muted-foreground text-center">
+            © {new Date().getFullYear()} Repair Bear LLC. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Privacy</Link>
-            <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Terms</Link>
-            <Link to="/contact" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Support</Link>
-          </div>
         </div>
       </div>
     </footer>
