@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { PortalSidebar } from "@/components/PortalSidebar";
 import { LogOut } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -30,7 +30,7 @@ export default function PortalLayout({ children }: PortalLayoutProps) {
         <div className="flex-1 flex flex-col">
           {/* Top bar */}
           <header className="h-16 flex items-center justify-between border-b border-border/50 bg-card/80 backdrop-blur-xl px-4 sticky top-0 z-40">
-            <SidebarTrigger className="ml-1" />
+            <div />
             <div className="flex items-center gap-3">
               <ThemeToggle />
               <button
