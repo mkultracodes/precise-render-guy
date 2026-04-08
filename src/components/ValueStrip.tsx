@@ -3,9 +3,8 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const values = [
   { icon: Zap, label: "Instant price range", color: "text-bear-gold" },
-  { icon: MapPin, label: "Real local repair shops", color: "text-primary" },
-  { icon: Clock, label: "Shop responses same day", color: "text-success" },
-  { icon: Smartphone, label: "Track your repair start-to-finish", color: "text-accent" },
+  { icon: MapPin, label: "Real local repair providers", color: "text-primary" },
+  { icon: Clock, label: "Providers respond fast", color: "text-success" },
 ];
 
 const ValueStrip = () => {
