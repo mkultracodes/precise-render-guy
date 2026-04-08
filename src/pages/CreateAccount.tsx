@@ -105,7 +105,7 @@ const CreateAccount = () => {
 
           <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 space-y-4">
             <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Full Name *</label>
+              <label className="text-sm font-medium text-foreground">Full Name</label>
               <Input
                 placeholder="John Doe"
                 value={form.name}
@@ -114,7 +114,7 @@ const CreateAccount = () => {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Email *</label>
+              <label className="text-sm font-medium text-foreground">Email</label>
               <Input
                 type="email"
                 placeholder="you@example.com"
@@ -124,7 +124,7 @@ const CreateAccount = () => {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Phone Number *</label>
+              <label className="text-sm font-medium text-foreground">Phone Number</label>
               <Input
                 type="tel"
                 placeholder="(555) 123-4567"
@@ -134,7 +134,7 @@ const CreateAccount = () => {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Password *</label>
+              <label className="text-sm font-medium text-foreground">Password</label>
               <Input
                 type="password"
                 placeholder="••••••••"
@@ -144,7 +144,7 @@ const CreateAccount = () => {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground">Confirm Password *</label>
+              <label className="text-sm font-medium text-foreground">Confirm Password</label>
               <Input
                 type="password"
                 placeholder="••••••••"
