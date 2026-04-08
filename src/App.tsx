@@ -19,6 +19,7 @@ import ContactSupport from "./pages/ContactSupport.tsx";
 import NewRepair from "./pages/NewRepair.tsx";
 import RepairHistory from "./pages/RepairHistory.tsx";
 import CreateAccount from "./pages/CreateAccount.tsx";
+import Payment from "./pages/Payment.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/shop/completed" element={<ShopCompleted />} />
           <Route path="/shop/settings" element={<ShopSettings />} />
           <Route path="/corporate" element={<Corporate />} />
+          <Route path="/payment" element={<Payment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
