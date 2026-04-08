@@ -298,7 +298,7 @@ const HowItWorks = () => {
   }, [activeCard, cycleKey, cardsVisible]);
 
   return (
-    <section id="how-it-works" className="py-12 md:py-28 relative">
+    <section id="how-it-works" className="py-8 md:py-16 relative">
       <div className="absolute inset-0 tech-grid opacity-30" />
       <div className="container mx-auto px-4 relative">
         <div
@@ -307,9 +307,6 @@ const HowItWorks = () => {
             headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-primary/10 text-primary text-xs md:text-sm font-medium mb-3 md:mb-4">
-            Simple process
-          </span>
           <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-4">
             How It Works
           </h2>
