@@ -8,6 +8,7 @@ import CustomerPortal from "./pages/CustomerPortal.tsx";
 import ShopPortal from "./pages/ShopPortal.tsx";
 import ShopActiveJobs from "./pages/ShopActiveJobs.tsx";
 import ShopCompleted from "./pages/ShopCompleted.tsx";
+import ShopSettings from "./pages/ShopSettings.tsx";
 import Corporate from "./pages/Corporate.tsx";
 import Login from "./pages/Login.tsx";
 import ShopLogin from "./pages/ShopLogin.tsx";
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/shop" element={<ShopPortal />} />
           <Route path="/shop/active" element={<ShopActiveJobs />} />
           <Route path="/shop/completed" element={<ShopCompleted />} />
+          <Route path="/shop/settings" element={<ShopSettings />} />
           <Route path="/corporate" element={<Corporate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
