@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import bearMascot from "@/assets/repair-bear-mascot.jpg";
 import { toast } from "sonner";
 
-const VALID_EMAIL = "shop@fixitpro.com";
+const VALID_EMAIL = "mkhemingway.retpair@gmail.com";
 const VALID_PASS = "1234";
 
 const ShopLogin = () => {
