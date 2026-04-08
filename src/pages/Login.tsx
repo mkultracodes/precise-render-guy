@@ -31,11 +31,24 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4">
+    <div className="min-h-screen bg-background flex flex-col px-4">
+      {/* Top bar */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border/50 shadow-sm">
+        <div className="container mx-auto px-4 h-16 flex items-center">
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <img src={bearMascot} alt="Repair Bear" className="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20" />
+            <span className="font-display font-bold text-xl text-foreground">
+              Repair<span className="text-gradient">Bear</span>
+            </span>
+          </Link>
+        </div>
+      </div>
+
+      <div className="flex-1 flex items-center justify-center pt-16">
       <div className="w-full max-w-sm">
         <div className="flex flex-col items-center mb-8">
-          <img src={bearMascot} alt="Repair Bear" className="w-16 h-16 rounded-full object-cover ring-2 ring-primary/20 mb-4" />
-          <h1 className="font-display font-bold text-2xl text-foreground">
+          <img src={bearMascot} alt="Repair Bear" className="w-28 h-28 rounded-full object-cover ring-4 ring-primary/20 mb-4" />
+          <h1 className="font-display font-bold text-3xl text-foreground">
             Repair<span className="text-gradient">Bear</span>
           </h1>
           <p className="text-sm text-muted-foreground mt-1">Sign in to your account</p>
@@ -72,6 +85,7 @@ const Login = () => {
             <Link to="/reset-password" className="text-primary hover:underline">Reset Password</Link>
           </div>
         </form>
+      </div>
       </div>
     </div>
   );
