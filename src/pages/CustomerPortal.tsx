@@ -192,26 +192,82 @@ const CustomerPortal = () => {
               </Dialog>
             </div>
 
+            {/* View Details — order popup */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="hero" size="lg" className="w-full group/btn">
+                  View Details
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-lg max-h-[85vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="font-display text-xl">Repair Order</DialogTitle>
+                </DialogHeader>
+                <div ref={orderPrintRef} className="space-y-5 pt-2">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="text-xs text-muted-foreground">Order #</p>
+                      <p className="font-bold text-foreground">{orderDetails.orderNumber}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs text-muted-foreground">Date</p>
+                      <p className="font-bold text-foreground">{orderDetails.date}</p>
+                    </div>
+                  </div>
+                  <div className="border-t border-border/50" />
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Device</p>
+                    <p className="font-semibold text-foreground">{orderDetails.device}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Reported Issue</p>
+                    <p className="text-sm text-foreground">{orderDetails.issue}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Description of Work</p>
+                    <p className="text-sm text-foreground">{orderDetails.description}</p>
+                  </div>
+                  <div className="border-t border-border/50" />
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-2">Estimate Breakdown</p>
+                    <div className="space-y-2">
+                      {orderDetails.parts.map((part) => (
+                        <div key={part.name} className="flex justify-between items-center bg-secondary/30 rounded-lg px-3 py-2">
+                          <div>
+                            <p className="text-sm font-medium text-foreground">{part.name}</p>
+                            <p className="text-xs text-muted-foreground">Qty: {part.qty}</p>
+                          </div>
+                          <p className="text-sm font-bold text-foreground">${part.price.toFixed(2)}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center border-t-2 border-foreground pt-3">
+                    <p className="font-bold text-foreground">Estimated Total</p>
+                    <p className="font-bold text-lg text-foreground">${estimateTotal.toFixed(2)}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => handlePrint(orderPrintRef)}
+                  className="w-full flex items-center justify-center gap-2 mt-2 py-2 rounded-xl bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium text-foreground"
+                >
+                  <Printer className="w-4 h-4" /> Print Order
+                </button>
+              </DialogContent>
+            </Dialog>
+
             {/* Repair Bear receipt link */}
             <Dialog>
               <DialogTrigger asChild>
-                <button className="w-full flex items-center gap-2 text-sm text-primary hover:underline mb-4 justify-center">
+                <button className="w-full flex items-center gap-2 text-sm text-primary hover:underline mt-3 justify-center">
                   <Receipt className="w-4 h-4" />
-                  View Repair Bear Receipt — $25.00 paid
+                  View Repair Bear Receipt
                 </button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                  <div className="flex items-center justify-between">
-                    <DialogTitle className="font-display text-xl">Receipt</DialogTitle>
-                    <button
-                      onClick={() => handlePrint(receiptPrintRef)}
-                      className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-colors"
-                      title="Print Receipt"
-                    >
-                      <Printer className="w-4 h-4 text-foreground" />
-                    </button>
-                  </div>
+                  <DialogTitle className="font-display text-xl">Receipt</DialogTitle>
                 </DialogHeader>
                 <div ref={receiptPrintRef} className="space-y-4 pt-2">
                   <div className="flex justify-between items-start">
@@ -245,83 +301,12 @@ const CustomerPortal = () => {
                     </div>
                   </div>
                 </div>
-              </DialogContent>
-            </Dialog>
-
-            {/* View Details — order popup */}
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button variant="hero" size="lg" className="w-full group/btn">
-                  View Details
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5" />
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-lg max-h-[85vh] overflow-y-auto">
-                <DialogHeader>
-                  <div className="flex items-center justify-between">
-                    <DialogTitle className="font-display text-xl">Repair Order</DialogTitle>
-                    <button
-                      onClick={() => handlePrint(orderPrintRef)}
-                      className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-colors"
-                      title="Print Order"
-                    >
-                      <Printer className="w-4 h-4 text-foreground" />
-                    </button>
-                  </div>
-                </DialogHeader>
-                <div ref={orderPrintRef} className="space-y-5 pt-2">
-                  {/* Order header */}
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <p className="text-xs text-muted-foreground">Order #</p>
-                      <p className="font-bold text-foreground">{orderDetails.orderNumber}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-muted-foreground">Date</p>
-                      <p className="font-bold text-foreground">{orderDetails.date}</p>
-                    </div>
-                  </div>
-
-                  <div className="border-t border-border/50" />
-
-                  {/* Device & Issue */}
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Device</p>
-                    <p className="font-semibold text-foreground">{orderDetails.device}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Reported Issue</p>
-                    <p className="text-sm text-foreground">{orderDetails.issue}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Description of Work</p>
-                    <p className="text-sm text-foreground">{orderDetails.description}</p>
-                  </div>
-
-                  <div className="border-t border-border/50" />
-
-                  {/* Line items */}
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-2">Estimate Breakdown</p>
-                    <div className="space-y-2">
-                      {orderDetails.parts.map((part) => (
-                        <div key={part.name} className="flex justify-between items-center bg-secondary/30 rounded-lg px-3 py-2">
-                          <div>
-                            <p className="text-sm font-medium text-foreground">{part.name}</p>
-                            <p className="text-xs text-muted-foreground">Qty: {part.qty}</p>
-                          </div>
-                          <p className="text-sm font-bold text-foreground">${part.price.toFixed(2)}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Total */}
-                  <div className="flex justify-between items-center border-t-2 border-foreground pt-3">
-                    <p className="font-bold text-foreground">Estimated Total</p>
-                    <p className="font-bold text-lg text-foreground">${estimateTotal.toFixed(2)}</p>
-                  </div>
-                </div>
+                <button
+                  onClick={() => handlePrint(receiptPrintRef)}
+                  className="w-full flex items-center justify-center gap-2 mt-2 py-2 rounded-xl bg-secondary hover:bg-secondary/80 transition-colors text-sm font-medium text-foreground"
+                >
+                  <Printer className="w-4 h-4" /> Print Receipt
+                </button>
               </DialogContent>
             </Dialog>
           </div>
