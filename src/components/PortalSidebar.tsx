@@ -10,7 +10,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  useSidebar,
 } from "@/components/ui/sidebar";
 
 const navItems = [
@@ -22,16 +21,14 @@ const navItems = [
 ];
 
 export function PortalSidebar() {
-  const { state } = useSidebar();
-  const collapsed = state === "collapsed";
   const location = useLocation();
 
   return (
-    <Sidebar collapsible="icon" className="border-r border-border/50">
+    <Sidebar collapsible="offcanvas" className="border-r border-border/50">
       <div className="h-16 flex items-center px-4 border-b border-border/50">
         <a href="/" className="flex items-center gap-2.5">
           <img src={bearMascot} alt="Repair Bear" className="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20 shrink-0" />
-          {!collapsed && (
+          {(
             <span className="font-display font-bold text-xl text-foreground">
               Repair <span className="text-gradient">Bear</span>
             </span>
@@ -54,7 +51,7 @@ export function PortalSidebar() {
                         activeClassName="bg-muted text-primary font-medium"
                       >
                         <item.icon className="mr-2 h-4 w-4 shrink-0" />
-                        {!collapsed && <span>{item.title}</span>}
+                        <span>{item.title}</span>
                       </NavLink>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
