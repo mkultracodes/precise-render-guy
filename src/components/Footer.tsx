@@ -74,11 +74,6 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
                 <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Privacy Policy
                 </Link>
@@ -86,6 +81,11 @@ const Footer = () => {
               <li>
                 <Link to="/terms" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
