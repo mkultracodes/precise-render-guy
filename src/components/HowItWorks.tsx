@@ -254,8 +254,8 @@ const steps = [
   {
     icon: Store,
     step: "3",
-    title: "Choose a repair shop",
-    description: "Up to 5 trusted local shops respond. Pick the one that works for you.",
+    title: "Choose a repair provider",
+    description: "Up to 5 trusted local providers respond. Pick the one that works for you.",
     gradient: "from-success/10 to-success/5",
     animation: "shop" as const,
   },

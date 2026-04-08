@@ -38,7 +38,7 @@ const HeroSection = () => {
               className="text-lg text-muted-foreground max-w-lg leading-relaxed animate-fade-up"
               style={{ animationDelay: "0.15s" }}
             >
-              Get an instant price range and we'll connect you with a trusted local repair shop — no waiting, no guesswork.
+              Get an instant price range and we'll connect you with a trusted local repair provider — no waiting, no guesswork.
             </p>
 
             <div
