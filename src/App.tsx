@@ -7,6 +7,10 @@ import Index from "./pages/Index.tsx";
 import CustomerPortal from "./pages/CustomerPortal.tsx";
 import ShopPortal from "./pages/ShopPortal.tsx";
 import Corporate from "./pages/Corporate.tsx";
+import Login from "./pages/Login.tsx";
+import ForgotPassword from "./pages/ForgotPassword.tsx";
+import ResetPassword from "./pages/ResetPassword.tsx";
+import ProfileSettings from "./pages/ProfileSettings.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -19,7 +23,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/portal" element={<CustomerPortal />} />
+          <Route path="/profile" element={<ProfileSettings />} />
           <Route path="/shop" element={<ShopPortal />} />
           <Route path="/corporate" element={<Corporate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
