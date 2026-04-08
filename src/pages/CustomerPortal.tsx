@@ -1,7 +1,15 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, MapPin, Phone, Clock, X } from "lucide-react";
 import PortalLayout from "@/components/PortalLayout";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const statusSteps = [
   { label: "Quote sent", done: true },
@@ -10,6 +18,32 @@ const statusSteps = [
   { label: "Ready for pickup", done: false },
   { label: "Completed", done: false },
 ];
+
+const shopInfo = {
+  name: "FixIt Pro",
+  address: "456 Commerce Blvd, Suite 12, Austin, TX 78702",
+  phone: "(512) 555-0199",
+  hours: "Mon–Sat 9am–7pm",
+  rating: "4.8 ★",
+};
+
+const orderDetails = {
+  orderNumber: "RB-2026-00417",
+  date: "April 5, 2026",
+  device: "iPhone 14 Pro",
+  issue: "Cracked screen — front display shattered, touch partially unresponsive",
+  description: "Full OLED display assembly replacement with OEM-quality part. Includes digitizer, front glass, and frame re-seal. Device diagnostics pre- and post-repair.",
+  parts: [
+    { name: "iPhone 14 Pro OLED Display Assembly", qty: 1, price: "$89.00" },
+    { name: "Adhesive Seal Kit", qty: 1, price: "$5.00" },
+    { name: "Labor — Screen Replacement", qty: 1, price: "$35.00" },
+  ],
+  estimateLow: "$99.00",
+  estimateHigh: "$129.00",
+  shop: shopInfo.name,
+  technician: "Marcus R.",
+  warranty: "90-day repair warranty",
+};
 
 const CustomerPortal = () => {
   const { ref: dashRef, isVisible: dashVisible } = useScrollReveal();
@@ -20,13 +54,13 @@ const CustomerPortal = () => {
         {/* Welcome */}
         <div className="mb-8 animate-fade-up">
           <h1 className="text-2xl md:text-3xl font-bold text-foreground">
-            Hi, MK — thanks for using RepairBear
+            Hi, MK — thanks for using Repair Bear
           </h1>
         </div>
 
         {/* Active Repair Card */}
         <section ref={dashRef}>
-          <h2 className="text-lg font-bold text-foreground mb-4">Active Repair</h2>
+          <h2 className="text-lg font-bold text-foreground mb-4">Active Repairs</h2>
           <div
             className={`glass-card rounded-2xl p-6 glow-border transition-all duration-700 ${
               dashVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -71,16 +105,128 @@ const CustomerPortal = () => {
                 <p className="text-xs text-muted-foreground">Estimated</p>
                 <p className="font-bold text-foreground text-sm">$99 – $129</p>
               </div>
-              <div className="bg-secondary/50 rounded-xl p-3">
-                <p className="text-xs text-muted-foreground">Shop</p>
-                <p className="font-bold text-foreground text-sm">FixIt Pro</p>
-              </div>
+
+              {/* Shop — clickable dialog */}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="bg-secondary/50 rounded-xl p-3 text-left hover:bg-secondary/70 transition-colors cursor-pointer">
+                    <p className="text-xs text-muted-foreground">Shop</p>
+                    <p className="font-bold text-foreground text-sm underline decoration-primary/40">FixIt Pro</p>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle className="font-display text-xl">{shopInfo.name}</DialogTitle>
+                  </DialogHeader>
+                  <div className="space-y-4 pt-2">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Address</p>
+                        <p className="text-sm text-muted-foreground">{shopInfo.address}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Phone className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Phone</p>
+                        <p className="text-sm text-muted-foreground">{shopInfo.phone}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Clock className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Hours</p>
+                        <p className="text-sm text-muted-foreground">{shopInfo.hours}</p>
+                      </div>
+                    </div>
+                    <div className="bg-secondary/50 rounded-xl p-3 text-center">
+                      <p className="text-sm text-muted-foreground">Customer Rating</p>
+                      <p className="font-bold text-foreground text-lg">{shopInfo.rating}</p>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
 
-            <Button variant="hero" size="lg" className="w-full group/btn">
-              View Details
-              <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5" />
-            </Button>
+            {/* View Details — order popup */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="hero" size="lg" className="w-full group/btn">
+                  View Details
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-lg max-h-[85vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="font-display text-xl">Repair Order</DialogTitle>
+                </DialogHeader>
+                <div className="space-y-5 pt-2">
+                  {/* Order header */}
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="text-xs text-muted-foreground">Order #</p>
+                      <p className="font-bold text-foreground">{orderDetails.orderNumber}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs text-muted-foreground">Date</p>
+                      <p className="font-bold text-foreground">{orderDetails.date}</p>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-border/50" />
+
+                  {/* Device & Issue */}
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Device</p>
+                    <p className="font-semibold text-foreground">{orderDetails.device}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Reported Issue</p>
+                    <p className="text-sm text-foreground">{orderDetails.issue}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-1">Description of Work</p>
+                    <p className="text-sm text-foreground">{orderDetails.description}</p>
+                  </div>
+
+                  <div className="border-t border-border/50" />
+
+                  {/* Line items */}
+                  <div>
+                    <p className="text-xs text-muted-foreground mb-2">Estimate Breakdown</p>
+                    <div className="space-y-2">
+                      {orderDetails.parts.map((part) => (
+                        <div key={part.name} className="flex justify-between items-center bg-secondary/30 rounded-lg px-3 py-2">
+                          <div>
+                            <p className="text-sm font-medium text-foreground">{part.name}</p>
+                            <p className="text-xs text-muted-foreground">Qty: {part.qty}</p>
+                          </div>
+                          <p className="text-sm font-bold text-foreground">{part.price}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="border-t border-border/50" />
+
+                  {/* Totals & info */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-secondary/50 rounded-xl p-3">
+                      <p className="text-xs text-muted-foreground">Estimate Range</p>
+                      <p className="font-bold text-foreground">{orderDetails.estimateLow} – {orderDetails.estimateHigh}</p>
+                    </div>
+                    <div className="bg-secondary/50 rounded-xl p-3">
+                      <p className="text-xs text-muted-foreground">Technician</p>
+                      <p className="font-bold text-foreground">{orderDetails.technician}</p>
+                    </div>
+                  </div>
+                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-3 text-center">
+                    <p className="text-sm font-medium text-primary">{orderDetails.warranty}</p>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </section>
       </div>
