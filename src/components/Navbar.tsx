@@ -58,11 +58,6 @@ const Navbar = () => {
               Customer Login
             </Button>
           </Link>
-          <Link to="/shop-login">
-            <Button variant="outline" size="sm">
-              Provider Login
-            </Button>
-          </Link>
         </div>
         <button
           className="md:hidden p-2 text-foreground"
@@ -94,11 +89,6 @@ const Navbar = () => {
             <Link to="/login" onClick={() => setMobileOpen(false)}>
               <Button variant="outline" size="sm" className="w-full">
                 Customer Login
-              </Button>
-            </Link>
-            <Link to="/shop-login" onClick={() => setMobileOpen(false)}>
-              <Button variant="outline" size="sm" className="w-full">
-                Provider Login
               </Button>
             </Link>
           </div>
