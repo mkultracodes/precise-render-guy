@@ -78,6 +78,11 @@ const Footer = () => {
                   Contact
                 </a>
               </li>
+              <li>
+                <Link to="/payment" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Payment
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
