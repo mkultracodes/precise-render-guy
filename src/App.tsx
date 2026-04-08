@@ -14,6 +14,7 @@ import ProfileSettings from "./pages/ProfileSettings.tsx";
 import ContactSupport from "./pages/ContactSupport.tsx";
 import NewRepair from "./pages/NewRepair.tsx";
 import RepairHistory from "./pages/RepairHistory.tsx";
+import CreateAccount from "./pages/CreateAccount.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/create-account" element={<CreateAccount />} />
           <Route path="/portal" element={<CustomerPortal />} />
           <Route path="/portal/support" element={<ContactSupport />} />
           <Route path="/portal/new-repair" element={<NewRepair />} />
