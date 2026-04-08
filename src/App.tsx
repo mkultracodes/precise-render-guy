@@ -12,6 +12,7 @@ import ShopSettings from "./pages/ShopSettings.tsx";
 import Corporate from "./pages/Corporate.tsx";
 import Login from "./pages/Login.tsx";
 import ShopLogin from "./pages/ShopLogin.tsx";
+import ShopContactSupport from "./pages/ShopContactSupport.tsx";
 import ForgotPassword from "./pages/ForgotPassword.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import ProfileSettings from "./pages/ProfileSettings.tsx";
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/shop/active" element={<ShopActiveJobs />} />
           <Route path="/shop/completed" element={<ShopCompleted />} />
           <Route path="/shop/settings" element={<ShopSettings />} />
+          <Route path="/shop/support" element={<ShopContactSupport />} />
           <Route path="/corporate" element={<Corporate />} />
           <Route path="/payment" element={<Payment />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
