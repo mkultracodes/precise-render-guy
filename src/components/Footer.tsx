@@ -12,7 +12,7 @@ const Footer = () => {
             <Link to="/" className="flex items-center gap-2 mb-4">
               <img src={bearMascot} alt="Repair Bear" className="w-8 h-8 rounded-full object-cover" />
               <span className="font-display font-bold text-lg text-foreground">
-                Repair<span className="text-gradient">Bear</span>
+                Repair <span className="text-gradient">Bear</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">

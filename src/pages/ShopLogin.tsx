@@ -35,9 +35,9 @@ const ShopLogin = () => {
         <div className="container mx-auto px-4 h-16 flex items-center">
           <Link to="/" className="flex items-center gap-2.5 group">
             <img src={bearMascot} alt="Repair Bear" className="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20" />
-            <span className="font-display font-bold text-xl text-foreground">
-              Repair<span className="text-gradient">Bear</span>
-              <span className="text-xs ml-1.5 px-2 py-0.5 rounded-full bg-accent/10 text-accent font-semibold">Shop</span>
+            <span className="font-display font-bold text-xl text-foreground flex items-center gap-1.5">
+              Repair <span className="text-gradient">Bear</span>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-accent/10 text-accent font-semibold">Shop</span>
             </span>
           </Link>
         </div>
@@ -48,7 +48,7 @@ const ShopLogin = () => {
           <div className="flex flex-col items-center mb-8">
             <img src={bearMascot} alt="Repair Bear" className="w-28 h-28 rounded-full object-cover ring-4 ring-primary/20 mb-4" />
             <h1 className="font-display font-bold text-3xl text-foreground">
-              Repair<span className="text-gradient">Bear</span>
+              Repair <span className="text-gradient">Bear</span>
             </h1>
             <div className="flex items-center gap-2 mt-1">
               <span className="text-xs px-2.5 py-0.5 rounded-full bg-accent/10 text-accent font-semibold">Shop</span>
@@ -85,6 +85,11 @@ const ShopLogin = () => {
             <div className="flex justify-between text-sm pt-2">
               <Link to="/forgot-password" className="text-primary hover:underline">Forgot Password?</Link>
               <Link to="/reset-password" className="text-primary hover:underline">Reset Password</Link>
+            </div>
+
+            <div className="text-center text-sm pt-2 border-t border-border/50">
+              <span className="text-muted-foreground">Don't have a shop account? </span>
+              <Link to="/create-shop-account" className="text-primary font-medium hover:underline">Register your shop</Link>
             </div>
           </form>
         </div>

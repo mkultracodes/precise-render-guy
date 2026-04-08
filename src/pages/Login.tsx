@@ -38,7 +38,7 @@ const Login = () => {
           <Link to="/" className="flex items-center gap-2.5 group">
             <img src={bearMascot} alt="Repair Bear" className="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20" />
             <span className="font-display font-bold text-xl text-foreground">
-              Repair<span className="text-gradient">Bear</span>
+              Repair <span className="text-gradient">Bear</span>
             </span>
           </Link>
         </div>
@@ -49,7 +49,7 @@ const Login = () => {
         <div className="flex flex-col items-center mb-8">
           <img src={bearMascot} alt="Repair Bear" className="w-28 h-28 rounded-full object-cover ring-4 ring-primary/20 mb-4" />
           <h1 className="font-display font-bold text-3xl text-foreground">
-            Repair<span className="text-gradient">Bear</span>
+            Repair <span className="text-gradient">Bear</span>
           </h1>
           <p className="text-sm text-muted-foreground mt-1">Sign in to your account</p>
         </div>
