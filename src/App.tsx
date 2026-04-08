@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import CustomerPortal from "./pages/CustomerPortal.tsx";
 import ShopPortal from "./pages/ShopPortal.tsx";
+import ShopActiveJobs from "./pages/ShopActiveJobs.tsx";
+import ShopCompleted from "./pages/ShopCompleted.tsx";
 import Corporate from "./pages/Corporate.tsx";
 import Login from "./pages/Login.tsx";
 import ShopLogin from "./pages/ShopLogin.tsx";
@@ -39,6 +41,8 @@ const App = () => (
           <Route path="/portal/history" element={<RepairHistory />} />
           <Route path="/profile" element={<ProfileSettings />} />
           <Route path="/shop" element={<ShopPortal />} />
+          <Route path="/shop/active" element={<ShopActiveJobs />} />
+          <Route path="/shop/completed" element={<ShopCompleted />} />
           <Route path="/corporate" element={<Corporate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
