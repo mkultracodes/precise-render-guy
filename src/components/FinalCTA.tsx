@@ -36,13 +36,6 @@ const FinalCTA = () => {
           </span>
           <div className="absolute inset-0 shimmer" />
         </Button>
-        <p className="text-xs text-muted-foreground mt-6 flex items-center justify-center gap-3">
-          <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-success" /> Up to 5 providers respond</span>
-          <span className="text-border">•</span>
-          <span>Same-day connections</span>
-          <span className="text-border">•</span>
-          <span>You choose</span>
-        </p>
       </div>
     </section>
   );
