@@ -311,6 +311,17 @@ const CustomerPortal = () => {
             </Dialog>
           </div>
         </section>
+
+        {/* No more active repairs */}
+        <div className="glass-card rounded-2xl p-8 text-center mt-6">
+          <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center mx-auto mb-4">
+            <Wrench className="w-7 h-7 text-muted-foreground" />
+          </div>
+          <p className="text-lg font-medium text-foreground mb-2">No other active repairs</p>
+          <p className="text-sm text-muted-foreground">
+            Additional active repairs will appear here.
+          </p>
+        </div>
       </div>
     </PortalLayout>
   );
