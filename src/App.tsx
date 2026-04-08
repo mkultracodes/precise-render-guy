@@ -11,6 +11,7 @@ import Login from "./pages/Login.tsx";
 import ForgotPassword from "./pages/ForgotPassword.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import ProfileSettings from "./pages/ProfileSettings.tsx";
+import ContactSupport from "./pages/ContactSupport.tsx";
 import NewRepair from "./pages/NewRepair.tsx";
 import RepairHistory from "./pages/RepairHistory.tsx";
 import NotFound from "./pages/NotFound.tsx";
