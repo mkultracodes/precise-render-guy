@@ -55,6 +55,16 @@ const handlePrint = (ref: React.RefObject<HTMLDivElement | null>) => {
 
 const RepairHistory = () => {
   const orderPrintRef = useRef<HTMLDivElement>(null);
+  const receiptPrintRef = useRef<HTMLDivElement>(null);
+
+  const receiptDetails = {
+    receiptNumber: "RB-REC-00312",
+    date: pastRepair.completedDate,
+    description: "Repair Bear coordination fee",
+    amount: "$25.00",
+    paymentMethod: "Visa ending in 4242",
+    status: "Paid",
+  };
 
   return (
     <PortalLayout>
@@ -73,7 +83,7 @@ const RepairHistory = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-3 gap-4 mb-4">
             <div className="bg-secondary/50 rounded-xl p-3">
               <p className="text-xs text-muted-foreground">Estimated</p>
               <p className="font-bold text-foreground text-sm">{pastRepair.estimatedCost}</p>
@@ -81,6 +91,10 @@ const RepairHistory = () => {
             <div className="bg-secondary/50 rounded-xl p-3">
               <p className="text-xs text-muted-foreground">Shop</p>
               <p className="font-bold text-foreground text-sm">{pastRepair.shop}</p>
+            </div>
+            <div className="bg-secondary/50 rounded-xl p-3">
+              <p className="text-xs text-muted-foreground">Completed</p>
+              <p className="font-bold text-foreground text-sm">{pastRepair.completedDate}</p>
             </div>
           </div>
 
