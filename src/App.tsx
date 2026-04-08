@@ -21,6 +21,9 @@ import NewRepair from "./pages/NewRepair.tsx";
 import RepairHistory from "./pages/RepairHistory.tsx";
 import CreateAccount from "./pages/CreateAccount.tsx";
 import Payment from "./pages/Payment.tsx";
+import Contact from "./pages/Contact.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import Terms from "./pages/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -50,6 +53,9 @@ const App = () => (
           <Route path="/shop/support" element={<ShopContactSupport />} />
           <Route path="/corporate" element={<Corporate />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
